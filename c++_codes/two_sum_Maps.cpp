@@ -1,28 +1,28 @@
-class Solution{
-    public:
-        vector<int> twoSum(vector<int>& nums, int target){
-                
+// hash table
+
+
+
+// Time complexity: 0(n)
+
+vector<int> twoSum(vector<int>& nums, int target){
+    map<int, int> map;
+    vector<int> pairs;
+    for(int i = 0; i < nums.size){
+        int complement = target - nums[i];
+        if(map.find(complement) != map.end()){
+            pairs.push_back(map.find(complement)->second);
+            pairs.push_back(i);
+            break;
         }
+        map.insert(pair<int, int>(nums[i],i));
+    }
+    return pairs 
 };
 
 
-
 /*
-
-Using map 
-pick every element in an array and calulate the differnece  = target - pickedElement 
-
-check if the map has the diff value ans its index is not equal to the index of picked element 
-
-if the element is correct return the solution ands its index in the map, and keep goign to the array
-untill you reach the end 
-
-if the elements are not correct it will keep going to the end of the array to find right solution of the index 
-
-
-
-
-
-time complexity: 0(n)
+    Explantion:
+    best method when taking on twosum problem:
+    the time
 
 */
